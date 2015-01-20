@@ -1,0 +1,100 @@
+/*
+ * @authod chmyun
+ * @date 2015-01-20
+ * @email hcy2367@163.com
+ */
+body {
+	font-family: 'microsoft yahei',Arial,sans-serif;
+	line-height: 1.6;
+	font-size: 14px;
+	background-color: #fff;
+	height: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+}
+a {
+	text-decoration: none;
+	color: #1982D1;
+}
+a:hover, a:focus {
+	text-decoration: none;
+	color:
+}
+.fl {float: left;}
+.fr {float: right;}
+.clearfix:after{
+	content: ".";
+	height: 0;
+	display: block;
+	visibility: hidden;
+	clear: both;
+}
+.clearfix{
+	*zoom: 1;
+}
+::-webkit-scrollbar-track-piece {
+	background-color: #f5f5f5;
+	border-left: 1px solid #d2d2d2
+}
+
+::-webkit-scrollbar {
+	width: 13px;
+	height: 13px
+}
+::-webkit-scrollbar-thumb {
+	background-color: #c2c2c2;
+	background-clip: padding-box;
+	border: 1px solid #979797;
+	min-height: 28px
+}
+
+::-webkit-scrollbar-thumb:hover {
+	border: 1px solid #636363;
+	background-color: #929292
+}
+
+.container {
+	width: 100%;
+	margin: 20px auto;
+	text-align: center;
+}
+
+.container h1 {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.emoji-link {
+	margin-top: 20px;
+	display: inline-block;
+	padding: 6px 12px;
+	text-align: center;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	color: #fff;
+	background-color: #428bca;
+	border-color: #357ebd;
+}
+
+.emoji-list {
+	overflow: hidden;
+	width: 90%;
+	margin: 0 auto;
+}
+.emoji-list li {
+	float: left;
+	margin: 0 20px 20px 0;
+}
+.emoji-list li img {
+	display: block;
+	width: 200px;
+	height: 200px;
+}
