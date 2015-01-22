@@ -10,9 +10,6 @@
     <title>iEmoji</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
     <link rel="stylesheet" type="text/css" href="css/global.css" />
-	<script type="text/javascript">
-
-	</script>
 </head>
 <body>
     <div class="container">
@@ -20,12 +17,38 @@
         <a href="#emoji_list" title="表情库" class="emoji-link">表情库</a>
 
         <ul id="emoji_list" class="emoji-list">
-            <li><img src="images/iEmoji-1.png" alt=""></li>
-            <li><img src="images/iEmoji-2.png" alt=""></li>
-            <li><img src="images/iEmoji-3.png" alt=""></li>
-            <li><img src="images/iEmoji-4.png" alt=""></li>
+
         </ul>
+
+        <p class="copyright">@copyright 2015 by chmyun</p>
     </div>
+
+    <script type="text/javascript">
+        var emojis = [
+        'blink', 'chill', 'chuckle', 'confused',
+        'cry', 'drooling', 'drowsy', 'embarrassed',
+        'flushed', 'grimace', 'grin', 'hellooo',
+        'hotkiss', 'hypnotized', 'inthedark', 'laugh',
+        'like', 'onfire', 'panic', 'pig', 'pleased',
+        'pucker', 'puke', 'scold', 'scowl', 'scream',
+        'sick', 'silence', 'skull', 'sleep', 'smile',
+        'smug', 'sneer', 'sniffle', 'sob', 'sobeye',
+        'strive', 'surprised', 'sweating', 'wantmoney', 'wink'
+        ];
+        for (var i = 0, len = emojis.length; i < len; i++) {
+            var num = 4;
+            var frament = document.createDocumentFragment();
+            var ul = document.getElementById('emoji_list');
+            for (var j = 1; j <= num; j++) {
+                var img = document.createElement('img'),
+                    li = document.createElement('li');
+                img.setAttribute('src', 'svg/iEmoji-' + emojis[i] + '-' + j + '.svg');
+                li.appendChild(img);
+                frament.appendChild(li);
+            }
+            ul.appendChild(frament);
+        }
+    </script>
 </body>
 </html>
 

@@ -98,3 +98,8 @@ a:hover, a:focus {
 	width: 200px;
 	height: 200px;
 }
+
+.copyright {
+	text-align: center;
+	color: #666;
+}
