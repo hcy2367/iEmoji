@@ -1,0 +1,278 @@
+Node version: v0.10.22
+
+Cordova version: 4.2.0
+
+Config.xml file: 
+
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.iEmoji.good" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>iEmoji</name>
+    <description>
+        表情宝，一套有趣的表情app
+    </description>
+    <author email="hcy2367@163.com" href="https://github.com/hcy2367">
+        chmyun
+    </author>
+
+    <!-- 锁定设备方向，其值有：default（包括水平和垂直）, landscape（水平）, portrait（垂直） -->
+    <preference name="Orientation" value="default" />
+
+	<!-- all: possible values handset, tablet, or universal -->
+    <preference name="target-device" value="universal" />
+
+    <!-- 在屏幕顶部时隐藏状态栏 -->
+    <preference name="Fullscreen" value="true" />
+
+    <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
+    <preference name="android-minSdkVersion" value="7" />
+
+    <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
+    <preference name="android-installLocation" value="auto" />
+
+	<!-- body背景图，会覆盖css的样式 -->
+    <!-- <preference name="BackgroundColor" value="0xff0000ff"/> -->
+
+    <!-- 不允许滚动条 -->
+    <!-- <preference name="DisallowOverscroll" value="true"/> -->
+
+    <!-- 暂停事件触发后是否保持应用程序在后台继续运行，默认true -->
+    <preference name="KeepRunning" value="false"/>
+
+	<!-- 加载一个页面的timeout超时时间，默认是20000ms -->
+    <preference name="LoadUrlTimeoutValue" value="10000"/>
+
+	<!-- 指定res/drawable 目录的图片名称，用于app启动画面，默认为splash -->
+	<preference name="SplashScreen" value="splash"/>
+
+	<!-- 图片闪动时间，默认3000ms -->
+	<preference name="SplashScreenDelay" value="10000"/>
+
+	<!-- 是否允许访问浏览器的localStorage和WebSQL存储，默认为true -->
+	<preference name="InAppBrowserStorageEnabled" value="true"/>
+
+	<!-- 加载app的第一个页面时显示一个对话框，默认为null -->
+	<!-- <preference name="LoadingDialog" value="My Title,My Message"/> -->
+
+	<!-- 指定error页面，默认为null -->
+	<preference name="ErrorUrl" value="error.html"/>
+
+	<!-- 在屏幕顶部显示标题，默认false -->
+	<preference name="ShowTitle" value="true"/>
+
+	<!-- 设置日志类别信息，默认为ERROR，其他值：WARN, INFO, DEBUG, VERBOSE -->
+	<preference name="LogLevel" value="VERBOSE"/>
+
+	<!-- 默认值为singleTop，其他值：standard, singleTask, singleInstance -->
+	<preference name="AndroidLaunchMode" value="singleTop"/>
+
+	<!-- 文件存储位置 -->
+	<preference name="AndroidPersistentFileLocation" value="Compatibility" />
+	<preference name="AndroidExtraFilesystems" value="files,files-external,documents,sdcard,cache,cache-external,root" />
+
+	<!-- Define app icon for each platform -->
+    <icon src="icon.png" />
+    <!-- android -->
+    <platform name="android">
+        <icon src="res/icon/android/icon_36_ldpi.png" density="ldpi" />
+        <icon src="res/icon/android/icon_48_mdpi.png" density="mdpi" />
+        <icon src="res/icon/android/icon_72_hdpi.png" density="hdpi" />
+        <icon src="res/icon/android/icon_96_xhdpi.png" density="xhdpi" />
+    </platform>
+
+    <!-- ios -->
+    <platform name="ios">
+	    <!-- iPhone / iPod Touch -->
+	    <icon src="res/icon/ios/icon-57.png" width="57" height="57" />
+	    <icon src="res/icon/ios/icon-57@2x.png" width="114" height="114" />
+	    <!-- iPad -->
+	    <icon src="res/icon/ios/icon-72.png" width="72" height="72" />
+	    <icon src="res/icon/ios/icon-72@2x.png" width="144" height="144" />
+    </platform>
+
+
+	<!-- Define app splash screen for each platform -->
+    <!-- android -->
+    <platform name="android">
+	    <!-- you can use any density that exists in the Android project -->
+	    <splash src="res/screen/android/screen_ldpi_landscape.png" density="land-ldpi"/>
+	    <splash src="res/screen/android/screen_mdpi_landscape.png" density="land-mdpi"/>
+	    <splash src="res/screen/android/screen_hdpi_landscape.png" density="land-hdpi"/>
+	    <splash src="res/screen/android/screen_xhdpi_landscape.png" density="land-xhdpi"/>
+
+	    <splash src="res/screen/android/screen_ldpi_portrait.png" density="port-ldpi"/>
+	    <splash src="res/screen/android/screen_mdpi_portrait.png" density="port-mdpi"/>
+	    <splash src="res/screen/android/screen_hdpi_portrait.png" density="port-hdpi"/>
+	    <splash src="res/screen/android/screen_xhdpi_portrait.png" density="port-xhdpi"/>
+	</platform>
+
+	<!-- ios -->
+	<platform name="ios">
+	    <!-- images are determined by width and height. The following are supported -->
+	    <splash src="res/screen/ios/screen-iphone-portrait.png" width="320" height="480"/>
+	    <splash src="res/screen/ios/screen-iphone-portrait-2x.png" width="640" height="960"/>
+	    <splash src="res/screen/ios/screen-ipad-portrait.png" width="768" height="1024"/>
+	    <splash src="res/screen/ios/screen-ipad-portrait-2x.png" width="1536" height="2048"/>
+	    <splash src="res/screen/ios/screen-ipad-landscape.png" width="1024" height="768"/>
+	    <splash src="res/screen/ios/screen-ipad-landscape-2x.png" width="2048" height="1536"/>
+	    <splash src="res/screen/ios/screen-iphone-portrait-568h-2x.png" width="640" height="1136"/>
+	</platform>
+
+    <content src="index.html" />
+
+	<!-- Define access to external domains -->
+    <!-- <access />   - a blank access tag denies access to all external resources. -->
+    <!-- <access origin="*" /> - a wildcard access tag allows access to all external resource. -->
+	<!--
+        <access origin="http://phonegap.com" />                    - allow any secure requests to http://phonegap.com/
+        <access origin="http://phonegap.com" subdomains="true" />  - same as above, but including subdomains, such as http://build.phonegap.com/
+        <access origin="http://phonegap.com" browserOnly="true" /> - only allows http://phonegap.com to be opened by the child browser.
+    -->
+    <access origin="*" />
+</widget>
+
+
+Plugins: 
+
+org.apache.cordova.camera,org.apache.cordova.console,org.apache.cordova.contacts,org.apache.cordova.device,org.apache.cordova.device-motion,org.apache.cordova.device-orientation,org.apache.cordova.dialogs,org.apache.cordova.file,org.apache.cordova.file-transfer,org.apache.cordova.geolocation,org.apache.cordova.inappbrowser,org.apache.cordova.network-information,org.apache.cordova.splashscreen,org.apache.cordova.statusbar,org.apache.cordova.vibration
+
+Android platform:
+
+Available Android targets:
+----------
+id: 1 or "android-3"
+     Name: Android 1.5
+     Type: Platform
+     API level: 3
+     Revision: 4
+     Skins: HVGA (default), HVGA-L, HVGA-P, QVGA-L, QVGA-P
+ Tag/ABIs : default/armeabi
+----------
+id: 2 or "android-4"
+     Name: Android 1.6
+     Type: Platform
+     API level: 4
+     Revision: 3
+     Skins: HVGA, QVGA, WVGA800 (default), WVGA854
+ Tag/ABIs : default/armeabi
+----------
+id: 3 or "android-7"
+     Name: Android 2.1
+     Type: Platform
+     API level: 7
+     Revision: 3
+     Skins: HVGA, QVGA, WQVGA400, WQVGA432, WVGA800 (default), WVGA854
+ Tag/ABIs : default/armeabi
+----------
+id: 4 or "android-8"
+     Name: Android 2.2
+     Type: Platform
+     API level: 8
+     Revision: 3
+     Skins: HVGA, QVGA, WQVGA400, WQVGA432, WVGA800 (default), WVGA854
+ Tag/ABIs : default/armeabi
+----------
+id: 5 or "android-10"
+     Name: Android 2.3.3
+     Type: Platform
+     API level: 10
+     Revision: 2
+     Skins: HVGA, QVGA, WQVGA400, WQVGA432, WVGA800 (default), WVGA854
+ Tag/ABIs : default/armeabi
+----------
+id: 6 or "android-11"
+     Name: Android 3.0
+     Type: Platform
+     API level: 11
+     Revision: 2
+     Skins: WXGA (default)
+ Tag/ABIs : default/armeabi
+----------
+id: 7 or "android-12"
+     Name: Android 3.1
+     Type: Platform
+     API level: 12
+     Revision: 3
+     Skins: WXGA (default)
+ Tag/ABIs : default/armeabi
+----------
+id: 8 or "android-13"
+     Name: Android 3.2
+     Type: Platform
+     API level: 13
+     Revision: 1
+     Skins: WXGA (default)
+ Tag/ABIs : default/armeabi
+----------
+id: 9 or "android-14"
+     Name: Android 4.0
+     Type: Platform
+     API level: 14
+     Revision: 4
+     Skins: HVGA, QVGA, WQVGA400, WQVGA432, WSVGA, WVGA800 (default), WVGA854, WXGA720, WXGA800
+ Tag/ABIs : no ABIs.
+----------
+id: 10 or "android-15"
+     Name: Android 4.0.3
+     Type: Platform
+     API level: 15
+     Revision: 5
+     Skins: HVGA, QVGA, WQVGA400, WQVGA432, WSVGA, WVGA800 (default), WVGA854, WXGA720, WXGA800
+ Tag/ABIs : no ABIs.
+----------
+id: 11 or "android-16"
+     Name: Android 4.1.2
+     Type: Platform
+     API level: 16
+     Revision: 4
+     Skins: HVGA, QVGA, WQVGA400, WQVGA432, WSVGA, WVGA800 (default), WVGA854, WXGA720, WXGA800, WXGA800-7in
+ Tag/ABIs : no ABIs.
+----------
+id: 12 or "android-17"
+     Name: Android 4.2.2
+     Type: Platform
+     API level: 17
+     Revision: 3
+     Skins: HVGA, QVGA, WQVGA400, WQVGA432, WSVGA, WVGA800 (default), WVGA854, WXGA720, WXGA800, WXGA800-7in
+ Tag/ABIs : no ABIs.
+----------
+id: 13 or "android-18"
+     Name: Android 4.3.1
+     Type: Platform
+     API level: 18
+     Revision: 3
+     Skins: HVGA, QVGA, WQVGA400, WQVGA432, WSVGA, WVGA800 (default), WVGA854, WXGA720, WXGA800, WXGA800-7in
+ Tag/ABIs : no ABIs.
+----------
+id: 14 or "android-19"
+     Name: Android 4.4.2
+     Type: Platform
+     API level: 19
+     Revision: 4
+     Skins: HVGA, QVGA, WQVGA400, WQVGA432, WSVGA, WVGA800 (default), WVGA854, WXGA720, WXGA800, WXGA800-7in
+ Tag/ABIs : no ABIs.
+----------
+id: 15 or "android-21"
+     Name: Android 5.0.1
+     Type: Platform
+     API level: 21
+     Revision: 2
+     Skins: HVGA, QVGA, WQVGA400, WQVGA432, WSVGA, WVGA800 (default), WVGA854, WXGA720, WXGA800, WXGA800-7in, AndroidWearRound, AndroidWearSquare, AndroidWearRound, AndroidWearSquare
+ Tag/ABIs : android-tv/armeabi-v7a, android-tv/x86, android-wear/armeabi-v7a, android-wear/x86, default/armeabi-v7a, default/x86
+----------
+id: 16 or "Google Inc.:Google APIs:21"
+     Name: Google APIs
+     Type: Add-On
+     Vendor: Google Inc.
+     Revision: 1
+     Description: Android + Google APIs
+     Based on Android 5.0.1 (API level 21)
+     Libraries:
+      * com.android.future.usb.accessory (usb.jar)
+          API for USB Accessories
+      * com.google.android.media.effects (effects.jar)
+          Collection of video effects
+      * com.google.android.maps (maps.jar)
+          API for Google Maps
+     Skins: HVGA, QVGA, WQVGA400, WQVGA432, WSVGA, WVGA800 (default), WVGA854, WXGA720, WXGA800, WXGA800-7in, AndroidWearRound, AndroidWearSquare, AndroidWearRound, AndroidWearSquare
+ Tag/ABIs : google_apis/x86, google_apis/x86_64
+
