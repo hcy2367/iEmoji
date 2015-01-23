@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.example.hello" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>iEmoji</name>
+    <description>
+        表情宝，一套有趣的表情app
+    </description>
+    <author email="hcy2367@163.com" href="https://github.com/hcy2367">
+        chmyun
+    </author>
+
+	<!-- Core plugins -->
+    <!-- Basic device information (Device API) -->
+    <gap:plugin name="org.apache.cordova.device" />
+
+    <!-- Accelerometer, Compass, and Geolocation: -->
+    <gap:plugin name="org.apache.cordova.device-motion" />
+    <gap:plugin name="org.apache.cordova.device-orientation" />
+    <gap:plugin name="org.apache.cordova.geolocation" />
+
+    <!-- Network Connection and Battery Events -->
+    <gap:plugin name="org.apache.cordova.network-information" />
+    <gap:plugin name="org.apache.cordova.battery-status" />
+
+    <!-- Camera, Media playback and Capture -->
+    <gap:plugin name="org.apache.cordova.camera" />
+    <gap:plugin name="org.apache.cordova.media" />
+    <gap:plugin name="org.apache.cordova.media-capture" />
+
+    <!-- Debug console -->
+    <gap:plugin name="org.apache.cordova.console" />
+
+    <!-- Contacts -->
+    <gap:plugin name="org.apache.cordova.contacts" />
+
+    <!-- Notification via dialog box or vibration -->
+    <gap:plugin name="org.apache.cordova.dialogs" />
+    <gap:plugin name="org.apache.cordova.vibration" />
+
+    <!-- Access files on device or network (File API) -->
+    <gap:plugin name="org.apache.cordova.file" />
+    <gap:plugin name="org.apache.cordova.file-transfer" />
+
+    <!-- Globalization -->
+    <gap:plugin name="org.apache.cordova.globalization" />
+
+    <!-- Open new browser windows (InAppBrowser) -->
+    <gap:plugin name="org.apache.cordova.inappbrowser" />
+
+    <!-- Splashscreen -->
+    <gap:plugin name="org.apache.cordova.splashscreen" />
+
+    <gap:plugin name="org.apache.cordova.statusbar" />
+
+    <!-- Third party plugins -->
+    <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
+    <!--
+        <gap:plugin name="com.phonegap.plugins.barcodescanner" />
+    -->
+
+    <access origin="*" />
+
+</widget>
