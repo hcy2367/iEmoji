@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.iEmoji.good" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <preference name="loglevel" value="DEBUG" />
+    <feature name="Camera">
+        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+    </feature>
+    <feature name="Contacts">
+        <param name="android-package" value="org.apache.cordova.contacts.ContactManager" />
+    </feature>
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
+    <feature name="Accelerometer">
+        <param name="android-package" value="org.apache.cordova.devicemotion.AccelListener" />
+    </feature>
+    <feature name="Compass">
+        <param name="android-package" value="org.apache.cordova.deviceorientation.CompassListener" />
+    </feature>
+    <feature name="Notification">
+        <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+    </feature>
+    <feature name="File">
+        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="FileTransfer">
+        <param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer" />
+    </feature>
+    <feature name="InAppBrowser">
+        <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+    </feature>
+    <feature name="NetworkStatus">
+        <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+    </feature>
+    <feature name="StatusBar">
+        <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Vibration">
+        <param name="android-package" value="org.apache.cordova.vibration.Vibration" />
+    </feature>
+    <icon density="ldpi" src="res/icon/android/icon_36_ldpi.png" />
+    <icon density="mdpi" src="res/icon/android/icon_48_mdpi.png" />
+    <icon density="hdpi" src="res/icon/android/icon_72_hdpi.png" />
+    <icon density="xhdpi" src="res/icon/android/icon_96_xhdpi.png" />
+    <splash density="land-ldpi" src="res/screen/android/screen_ldpi_landscape.png" />
+    <splash density="land-mdpi" src="res/screen/android/screen_mdpi_landscape.png" />
+    <splash density="land-hdpi" src="res/screen/android/screen_hdpi_landscape.png" />
+    <splash density="land-xhdpi" src="res/screen/android/screen_xhdpi_landscape.png" />
+    <splash density="port-ldpi" src="res/screen/android/screen_ldpi_portrait.png" />
+    <splash density="port-mdpi" src="res/screen/android/screen_mdpi_portrait.png" />
+    <splash density="port-hdpi" src="res/screen/android/screen_hdpi_portrait.png" />
+    <splash density="port-xhdpi" src="res/screen/android/screen_xhdpi_portrait.png" />
+    <name>iEmoji</name>
+    <description>
+        表情宝，一套有趣的表情app
+    </description>
+    <author email="hcy2367@163.com" href="https://github.com/hcy2367">
+        chmyun
+    </author>
+    <preference name="Orientation" value="default" />
+    <preference name="target-device" value="universal" />
+    <preference name="Fullscreen" value="true" />
+    <preference name="android-minSdkVersion" value="7" />
+    <preference name="android-installLocation" value="auto" />
+    <preference name="KeepRunning" value="false" />
+    <preference name="LoadUrlTimeoutValue" value="10000" />
+    <preference name="SplashScreen" value="splash" />
+    <preference name="SplashScreenDelay" value="10000" />
+    <preference name="InAppBrowserStorageEnabled" value="true" />
+    <preference name="ErrorUrl" value="error.html" />
+    <preference name="ShowTitle" value="true" />
+    <preference name="LogLevel" value="VERBOSE" />
+    <preference name="AndroidLaunchMode" value="singleTop" />
+    <preference name="AndroidPersistentFileLocation" value="Compatibility" />
+    <preference name="AndroidExtraFilesystems" value="files,files-external,documents,sdcard,cache,cache-external,root" />
+    <icon src="icon.png" />
+    <content src="index.html" />
+    <access origin="*" />
+</widget>
