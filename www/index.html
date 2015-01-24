@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="format-detection" content="email=no">
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <title>表情宝</title>
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+        <link href="css/min/iEmoji.min.css?v=1.0.0" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <!-- home template -->
+        <script id="home-tpl" type="text/x-handlebars-template">
+            <header class="header bar bar-nav">
+                <a class="icon icon-search pull-right" id="emoji_search_btn"></a>
+                <h1 class="title">表情宝</h1>
+            </header>
+
+            <div class="bar bar-standard" id="emoji_search_zone">
+                <input type="search" id="emoji_search_key" placeholder="输入英文表情，如：smile" />
+            </div>
+
+            <div class="content">
+                <div class="scroller">
+                    {{! emoji list 重用模板 }}
+                    {{> emojiListTemp}}
+                </div>
+            </div>
+
+            <footer class="footer bar bar-footer">
+                <nav class="bar bar-tab">
+                    <a class="tab-item active" href="#index" data-transition="slide-in">
+                        <span class="icon icon-home"></span>
+                        <span class="tab-label">表情宝</span>
+                    </a>
+                    <a class="tab-item" href="#shake" data-transition="slide-in">
+                        <span class="icon icon-gear"></span>
+                        <span class="tab-label">摇一摇</span>
+                    </a>
+                    <a class="tab-item" href="#about" data-transition="slide-in">
+                        <span class="icon icon-person"></span>
+                        <span class="tab-label">我</span>
+                    </a>
+                </nav>
+            </footer>
+        </script>
+
+        <!-- emoji list template -->
+        <script id="emoji-list-tpl" type="text/x-handlebars-template">
+            <ul class="table-view" id="emoji_list">
+                {{#each this}}
+                <li class="table-view-cell media">
+                    <a class="navigate-right" href="#emoji/{{id}}" data-transition="slide-in">
+                        <div class="media-object pull-left" style="background-image: url({{src}});"></div>
+                        <span class="create-time pull-right">{{create}}</span>
+                        <div class="media-body">
+                            <h4>{{category}}</h4>
+                            <p>{{description}}</p>
+                        </div>
+                    </a>
+                </li>
+                {{/each}}
+            </ul>
+        </script>
+
+        <!-- emoji detail template -->
+        <script id="emoji-tpl" type="text/x-handlebars-template">
+            <header class="header bar bar-nav">
+                <a href="#index" class="icon icon-left-nav pull-left" data-transition="slide-in"></a>
+                <a class="icon icon-share pull-right share-btn"></a>
+                <h1 class="title" style="padding-left:50px;">{{category}}</h1>
+            </header>
+
+            <div class="content">
+                <div class="card">
+                    <ul class="table-view" id="emoji_detail">
+                        <li class="table-view-cell media">
+                            <div class="media-head">
+                                <img class="media-object" data-origin="{{origin}}" src="{{src}}">
+                            </div>
+                            <div class="media-body">
+                                <p class="category">分类：<strong>{{category}}</strong></p>
+                                <p class="desc">描述：<strong>{{description}}</strong></p>
+                                <p class="create-time">创建时间：<strong>{{create}}</strong></p>
+                                <p><button class="btn btn-primary save-btn">保存</button></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-layer"><span><img src="img/loading.gif"> 保存中...</span></div>
+        </script>
+
+        <!-- shake template -->
+        <script id="shake-tpl" type="text/x-handlebars-template">
+            <header class="header bar bar-nav">
+                <a class="icon icon-share pull-right share-btn"></a>
+                <h1 class="title">表情宝</h1>
+            </header>
+
+            <div class="content shake-content">
+                <div class="content-padded">
+                    <h3>亲，来试试更多表情~</h3>
+                    <p class="shake-before"><img class="emoji-object" src="img/{{hand}}" width="100"></p>
+                    <p class="shake-go">GO！</p>
+                    <p class="shake-emoji" style="background-image: url(svg/iEmoji-smile-1.svg);">
+                    </p>
+                    <p class="shake-tip">
+                        <img class="loading-object" src="img/{{loading}}"> <span>正在加载中...</span>
+                    </p>
+                    <p class="save-emoji">
+                        <button class="btn btn-positive save-emoji-btn">保存</button>
+                    </p>
+                </div>
+            </div>
+
+            <footer class="footer bar bar-footer">
+                <nav class="bar bar-tab">
+                    <a class="tab-item" href="#index" data-transition="slide-in">
+                        <span class="icon icon-home"></span>
+                        <span class="tab-label">表情宝</span>
+                    </a>
+                    <a class="tab-item active" href="#shake" data-transition="slide-in">
+                        <span class="icon icon-gear"></span>
+                        <span class="tab-label">摇一摇</span>
+                    </a>
+                    <a class="tab-item" href="#about" data-transition="slide-in">
+                        <span class="icon icon-person"></span>
+                        <span class="tab-label">我</span>
+                    </a>
+                </nav>
+            </footer>
+
+            <div class="bg-layer"><span><img src="img/loading.gif">保存中...</span></div>
+        </script>
+
+        <!-- about template -->
+        <script id="about-tpl" type="text/x-handlebars-template">
+            <header class="header bar bar-nav">
+                <a class="icon icon-code pull-right"></a>
+                <h1 class="title">表情宝</h1>
+            </header>
+
+            <div class="content">
+                <div class="card">
+                    <ul class="table-view" id="about">
+                        <li class="table-view-cell media">
+                            <img class="media-object pull-left" src="img/{{avatar}}">
+                            <div class="media-body">
+                                <span>{{name}}</span>
+                                <p>{{signature}}</p>
+                            </div>
+                        </li>
+                        <li class="table-view-cell media">
+                            <img class="media-object pull-left" src="img/{{iWeiXin}}">
+                            <div class="media-body">
+                                <h4>微信号</h4>
+                                <p>{{weixin}}</p>
+                            </div>
+                        </li>
+                        <li class="table-view-cell media">
+                            <a href="http://weibo.com/hcy2367" data-ignore="push" target="_blank">
+                                <img class="media-object pull-left" src="img/{{iWeiBo}}">
+                                <div class="media-body">
+                                    <h4>微博号</h4>
+                                    <p>{{weibo}}</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="table-view-cell media">
+                            <img class="media-object pull-left" src="img/{{iQQ}}">
+                            <div class="media-body">
+                                <h4>QQ号</h4>
+                                <p>{{qq}}</p>
+                            </div>
+                        </li>
+                        <li class="table-view-cell media">
+                            <span class="media-object icon-mail pull-left"></span>
+                            <div class="media-body">
+                                <h4>Email</h4>
+                                <p>hcy2367@163.com</p>
+                            </div>
+                        </li>
+                        <li class="table-view-cell media">
+                            <span class="media-object icon-location pull-left"></span>
+                            <div class="media-body">
+                                <h4>当前位置</h4>
+                                <p class="current-location">无法确定</p>
+                            </div>
+                        </li>
+                        <!--
+                        <li class="table-view-cell media">
+                            <a hre="#" class="push-right add-contact-btn">
+                                <span class="media-object pull-left"></span>
+                                <div class="media-body">Add to contacts</div>
+                            </a>
+                        </li>
+                        <li class="table-view-cell media">
+                            <a hre="#" class="push-right change-pic-btn">
+                                <span class="media-object pull-left"></span>
+                                <div class="media-body">Change Picture</div>
+                            </a>
+                        </li>
+                        -->
+                    </ul>
+                </div>
+
+                <div class="content-padded">
+                    <p class="copyright">@copyright 2015 by chmyun</p>
+                </div>
+            </div>
+
+            <footer class="footer bar bar-footer">
+                <nav class="bar bar-tab">
+                    <a class="tab-item" href="#index" data-transition="slide-in">
+                        <span class="icon icon-home"></span>
+                        <span class="tab-label">表情宝</span>
+                    </a>
+                    <a class="tab-item" href="#shake" data-transition="slide-in">
+                        <span class="icon icon-gear"></span>
+                        <span class="tab-label">摇一摇</span>
+                    </a>
+                    <a class="tab-item active" href="#about" data-transition="slide-in">
+                        <span class="icon icon-person"></span>
+                        <span class="tab-label">我</span>
+                    </a>
+                </nav>
+            </footer>
+        </script>
+
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/min/lib.min.js"></script>
+        <script type="text/javascript" src="js/min/iEmoji.min.js?v=1.0.0"></script>
+
+    </body>
+</html>
+
