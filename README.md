@@ -20,7 +20,7 @@
 * 摇一摇换表情
 
 ## 使用
-初始化一个项目，将config.xml覆盖项目生成的config.xml，将www目录里的文件放到项目的根目录，添加插件列表，构建项目，测试项目，可以用模拟器，也可以连接你的手机，打开USB调试模式即可：
+配置java JDK、Eclipse IDE 、Android SDK、ADT (安卓开发工具插件）、Ant 打包工具、Node.js环境，初始化一个项目，将config.xml覆盖项目生成的config.xml，将www目录里的文件放到项目的根目录，添加插件列表，构建项目，测试项目，可以用模拟器，也可以连接你的手机，打开USB调试模式即可：
 
 	$ cordova create test com.iEmoji.hello test
 	$ cd test
