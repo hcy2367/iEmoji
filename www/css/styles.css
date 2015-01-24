@@ -1,0 +1,367 @@
+html {
+    -ms-touch-action: none;
+}
+body {
+
+    overflow: hidden; /* this is important to prevent the whole page to bounce */
+}
+
+@keyframes fade {
+    from { color:#999; opacity: 1.0; }
+    50% { color:#666; opacity: 0.4; }
+    to { color:#333; opacity: 1.0; }
+}
+
+@-webkit-keyframes fade {
+    from { color:#999; opacity: 1.0; }
+    50% { color:#666; opacity: 0.4; }
+    to { color:#333; opacity: 1.0; }
+}
+
+.blink {
+    animation:fade 3s infinite;
+    -webkit-animation:fade 3s infinite;
+}
+
+/*可适应性图片*/
+img {
+   max-width: 100%;
+   height: auto;
+}
+/*灵活的嵌入式视频*/
+.video embed, .video object, .video iframe {
+    width: 100%;
+    height: auto;
+}
+
+ul {
+    clear: both;
+}
+
+.header.bar {
+    background: url(../img/header-bg.png) repeat-x 0 0;
+    border-bottom: 0;
+}
+.header .title, .header a {
+    color: #fff;
+}
+
+.content {
+    /*-webkit-overflow-scrolling: touch;
+    是iOS5时候提供的一个特性，支持局部区域的快速滚动、惯性滚动和回弹效果。
+    但并不被Android支持，所以Android下局部滚动会卡卡的。可以在Android浏览器下运行下面这段代码
+    */
+    width: 100%;
+    overflow: hidden;
+    padding-top: 0 !important;
+    top: 50px;
+    bottom: 60px;
+    padding-bottom: 0 !important;
+    background-color: #fff;
+}
+
+.footer.bar {
+    background-color: #fafafa;
+}
+
+.scroller {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    -o-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+.content.show-search {
+    top: 100px;
+}
+
+/*table-view*/
+.table-view {
+    margin: 0 !important;
+    border: none;
+}
+.table-view-cell {
+    padding: 8px 12px;
+}
+.table-view-cell > a:not(.btn) {
+    margin: -8px -12px;
+}
+
+/*slider*/
+.slider .slide-text {
+    position: absolute;
+    left: 45%;
+    bottom: 10px;
+    z-index: 999;
+    color: #fff;
+}
+
+/*bar-tab*/
+.bar-tab {
+    top: auto;
+    bottom: 0;
+}
+
+/*search zone  .bar-header-secondary*/
+#emoji_search_zone {
+    display: none;
+}
+#emoji_search_btn, .refresh-btn {
+    cursor: pointer;
+}
+#emoji_search_key.active {
+    border: 1px solid #eea236;
+}
+
+#emoji_list .create-time {
+    font-size: 12px;
+    color: #999;
+    margin-top: 5px;
+}
+#emoji_list .media-body {
+    margin-top: 2px;
+}
+#emoji_list .media-body h4 {
+    font-weight: normal;
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-family: "Times New Roman";
+    color: #333;
+}
+
+.media-object {
+    width: 50px;
+    height: 50px;
+}
+#emoji_list .media-object {
+    background-repeat: no-repeat;
+    background-position: center -6px;
+    background-size: 150% 150%;
+}
+
+#about h4 {
+    font-weight: normal;
+    font-size: 14px;
+    margin: 8px 0 3px 0;
+}
+
+.bar .icon.icon-left-nav {
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-left: -8px;
+}
+.bar .icon.icon-share {
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-right: -8px;
+    cursor: pointer;
+}
+
+#emoji_detail {
+    text-align: center;
+}
+#emoji_detail li {
+    padding-bottom: 30px;
+}
+#emoji_detail .media-object {
+    width: 320px;
+    height: 320px;
+    margin-top: 20px;
+}
+#emoji_detail .media-body {
+    margin-top: -50px;
+}
+#emoji_detail .media-body p {
+    margin-top: 20px;
+    font-size: 16px;
+}
+#emoji_detail .save-btn {
+    padding: 15px 60px;
+    font-size: 16px;
+}
+
+/*shake*/
+.shake-content {
+    text-align: center;
+}
+.shake-content h3 {
+    margin-bottom: 30px;
+}
+.shake-before img {
+    -webkit-animation: handMove 2s ease-in infinite;
+    animation: handMove 2s ease-in infinite;
+}
+@-webkit-keyframes handMove {
+    0% {
+        -webkit-transform: rotate(0);
+        -moz-transform: rotate(0);
+        -ms-transform: rotate(0);
+        -o-transform: rotate(0);
+        transform: rotate(0);
+    }
+    50% {
+        -webkit-transform: rotateZ(30deg);
+        -moz-transform: rotateZ(30deg);
+        -ms-transform: rotateZ(30deg);
+        -o-transform: rotateZ(30deg);
+        transform: rotateZ(30deg);
+    }
+    100% {
+        -webkit-transform: rotate(0);
+        -moz-transform: rotate(0);
+        -ms-transform: rotate(0);
+        -o-transform: rotate(0);
+        transform: rotate(0);
+    }
+}
+@keyframes handMove {
+    0% {
+        -webkit-transform: rotate(0);
+        -moz-transform: rotate(0);
+        -ms-transform: rotate(0);
+        -o-transform: rotate(0);
+        transform: rotate(0);
+    }
+    50% {
+        -webkit-transform: rotateZ(30deg);
+        -moz-transform: rotateZ(30deg);
+        -ms-transform: rotateZ(30deg);
+        -o-transform: rotateZ(30deg);
+        transform: rotateZ(30deg);
+    }
+    100% {
+        -webkit-transform: rotate(0);
+        -moz-transform: rotate(0);
+        -ms-transform: rotate(0);
+        -o-transform: rotate(0);
+        transform: rotate(0);
+    }
+}
+.shake-go {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 200px;
+    background-color: #7ba09b;
+    margin: 20px auto;
+    font-size: 36px;
+    color: #fff;
+}
+.shake-emoji {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: center -25px;
+    background-size: 150% 150%;
+    display: none;
+}
+.shake-tip {
+    display: none;
+    margin: 20px 0;
+}
+.shake-tip img {
+    vertical-align: middle;
+}
+.btn:disabled, .btn.disabled {
+    opacity: .4;
+}
+.save-emoji {
+    margin-top: 20px;
+}
+.save-emoji-btn {
+    display: none;
+    font-size: 16px;
+    padding: 15px 60px;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    margin-top: 20px;
+}
+.footer .bar-tab .tab-item .tab-label {
+    font-size: 12px;
+}
+
+/*遮罩层*/
+.bg-layer {
+    background: #000;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    display: none;
+}
+.bg-layer span {
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    position: absolute;
+    left: 35%;
+    top: 50%;
+    margin-top: -20px;
+}
+
+/*emoji loading*/
+#loading_tip, #no_data_tip {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #393d41;
+    color: #fff;
+}
+
+.icon-call {
+    background: transparent url(images/ic_action_phone_outgoing.png);
+    background-repeat: no-repeat;
+}
+.icon-sms {
+    background: transparent url(images/ic_action_dialog.png);
+    background-repeat: no-repeat;
+}
+.icon-mail {
+    background: url(images/ic_action_mail.png) no-repeat center center transparent;
+}
+.icon-manager {
+    background: transparent url(images/ic_action_user.png);
+    background-repeat: no-repeat;
+}
+.icon-reports {
+    background: transparent url(images/ic_action_users.png);
+    background-repeat: no-repeat;
+}
+.icon-contact {
+    background: transparent url(images/ic_action_add.png);
+    background-repeat: no-repeat;
+}
+.icon-location {
+    background: url(images/ic_action_location.png) no-repeat center center transparent;
+}
